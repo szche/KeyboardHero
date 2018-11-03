@@ -1,0 +1,49 @@
+body
+{
+	background-color: #1a1a1a;
+}
+
+canvas
+{
+	background-color: white;
+	border:2px solid black;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transform: translate(0%, -50%);
+	z-index: 1;
+
+}
+
+
+.scoreBoard
+{
+	color:#1a1a1a;
+	width: 20vw;
+	height: 90vh;
+	text-align: center;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 75%;
+	transform: translate(0%, -50%);
+	z-index: 2;
+	/* background-color: #e4e4dc; */
+	padding: 20px 0px 20px 0px;
+}
+
+.scoreBoard .info
+{
+	color:white;
+	font-size: 3vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.info i
+{
+	margin-top: 10%;
+}
