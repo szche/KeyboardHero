@@ -18,7 +18,7 @@ var lives = 5;
 var Score = 0;
 
 function startGame() {
-
+    $(".gameTip").hide();
     //CALCULATING SIZE OF THE CANVAS
     docHeight =  $(document).height();
     docWidth = $(document).width();
@@ -36,7 +36,7 @@ function startGame() {
 
     myGameArea.start();
 
-    clickArea = new component(canvasWidth, 150, "black", 0, (canvasHeight/2 - 75), "clickArea");
+    clickArea = new component(canvasWidth+150, 150, "black", 0, (canvasHeight/2 - 75), "clickArea");
 
 
 }
@@ -66,6 +66,7 @@ var myGameArea = {
     //WHEN THE GAME ENDS
     stop : function() {
         clearInterval(this.interval);
+
   }
 
 }
@@ -87,9 +88,14 @@ function component(width, height, color, x, y, text, active) {
       if(this.text == "clickArea")
       {
         ctx.strokeStyle = "#8a8a8a";
+        ctx.strokeRect(this.x-20, this.y, this.width, this.height);
+
       }
-      else   ctx.strokeStyle = "transparent";
+      else
+      {
+        ctx.strokeStyle = "transparent";
         ctx.strokeRect(this.x, this.y, this.width, this.height);
+      }
     }
 
     //IF THE TILE ABOVE THE CANVAS AREA
@@ -133,7 +139,7 @@ function updateGameArea() {
 
         if(everyinterval(spawnInterval))
         {
-          Tiles.push(new component(canvasWidth*0.2, 0, "black", canvasSections[randomIntFromInterval(0, 4)][0], canvasHeight, alphabet[randomIntFromInterval(0, 25)], true));
+          Tiles.push(new component(canvasWidth*0.2, 0, "#1a1a1a", canvasSections[randomIntFromInterval(0, 4)][0], canvasHeight, alphabet[randomIntFromInterval(0, 25)], true));
       }
 
       for (i = 0; i < Tiles.length; i += 1) {
@@ -207,9 +213,6 @@ function everyinterval(n) {
       if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
       return false;
   }
-
-
-
 
 
 

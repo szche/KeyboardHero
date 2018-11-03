@@ -21,11 +21,17 @@
 
   </head>
 
-  <body onload="startGame()">
+  <body>
+
+    <div class="gameTip">Press Space to start game. </br>
+      <button onclick="startGame()">Start</button>
+    </div>
+
 
     <div class="scoreBoard">
+      <h3 class="logo">Keyboard Hero</h3>
       <div class="lead info">Score
-      <div id="score"></div>
+      <div id="score">0</div>
       <div id="life-score"><i class="fas fa-heart"></i> <i class="fas fa-heart"></i> <i class="fas fa-heart"></i> <i class="fas fa-heart"></i> <i class="fas fa-heart"></i> </div>
     </div>
   </div>
