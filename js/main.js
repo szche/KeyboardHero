@@ -82,11 +82,11 @@ function component(width, height, color, x, y, text, active) {
 
     this.update = function(){
       ctx = myGameArea.context;
-
+       ctx.lineWidth=10;
       // console.log(this);
       if(this.text == "clickArea")
       {
-        ctx.strokeStyle = "black";
+        ctx.strokeStyle = "#8a8a8a";
       }
       else   ctx.strokeStyle = "transparent";
         ctx.strokeRect(this.x, this.y, this.width, this.height);
@@ -130,7 +130,6 @@ function updateGameArea() {
 
         myGameArea.frameNo += 1;
 
-        clickArea.update();
 
         if(everyinterval(spawnInterval))
         {
@@ -174,6 +173,9 @@ function updateGameArea() {
     }
 
   }
+  clickArea.update();
+
+
 
       //UPDATE SCOREBOARD
       document.getElementById("score").innerHTML = Score;
