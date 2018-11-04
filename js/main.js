@@ -1,6 +1,9 @@
 var docHeight = 480;
 var docWidth = 270;
 
+var red = "#ff817b";
+var green = "#9fdf9f";
+
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 var canvasHeight = docHeight;
@@ -87,7 +90,7 @@ function component(width, height, color, x, y, text, active) {
       // console.log(this);
       if(this.text == "clickArea")
       {
-        ctx.strokeStyle = "#8a8a8a";
+        ctx.strokeStyle = "#afa2a7";
         ctx.strokeRect(this.x-20, this.y, this.width, this.height);
 
       }
@@ -155,7 +158,7 @@ function updateGameArea() {
         {
           Score += 10;
           Tiles[i].active = false;
-          Tiles[i].color = "green";
+          Tiles[i].color = green;
 
           //SPEED AND SPAWN INTERVAL UPDATE
           if(Score % 100 == 0 && Score > 0)
@@ -204,7 +207,7 @@ function updateGameArea() {
 function Mistake(i)
 {
   Tiles[i].active = false;
-  Tiles[i].color = "red";
+  Tiles[i].color = red;
   lives -= 1;
 }
 
